@@ -5,7 +5,10 @@ import Temporadas from './Temporadas'
 class TemporadasContainer extends Component {
 
     state = {
-        data: []
+        dataBB: [],
+        dataBCS: [],
+        nTemporadasBB: [],
+        nTemporadasBCS: []
     }
 
     async componentDidMount() {
@@ -13,15 +16,42 @@ class TemporadasContainer extends Component {
     }
 
     fetchTemporadas = async () => {
-        let res = await fetch('https://tarea-1-breaking-bad.herokuapp.com/api/episodes?series=Breaking+Bad')
-        let data = await res.json()
+        let resBB = await fetch('https://tarea-1-breaking-bad.herokuapp.com/api/episodes?series=Breaking+Bad')
+        let dataBB = await resBB.json()
 
-        console.log(data)
+        let resBCS = await fetch('https://tarea-1-breaking-bad.herokuapp.com/api/episodes?series=Better+Call+Saul')
+        let dataBCS = await resBCS.json()
 
-        this.setState({ data })
+
+        this.setState({ dataBB })
+        this.setState({ dataBCS })
+
+        this.contarTemporadas(dataBB, dataBCS)
 
     }
 
+    contarTemporadas = (dataBB, dataBCS) => {
+
+        var nTemporadasBB = []
+        dataBB.map((episodio) => {
+            var temporada = parseInt(episodio.season, 10)
+            const pos = nTemporadasBB.indexOf(temporada)
+            if (pos < 0) {
+                nTemporadasBB.push(temporada)
+            }
+        })
+
+        var nTemporadasBCS = []
+        dataBCS.map((episodio) => {
+            var temporada = parseInt(episodio.season, 10)
+            const pos = nTemporadasBCS.indexOf(temporada)
+            if (pos < 0) {
+                nTemporadasBCS.push(temporada)
+            }
+        })
+        this.setState({ nTemporadasBB })
+        this.setState({ nTemporadasBCS })
+    }
 
     //componentDidMount() {
     //    axios.get('https://tarea-1-breaking-bad.herokuapp.com/api/episodes?series=Better+Call+Saul')
@@ -32,7 +62,10 @@ class TemporadasContainer extends Component {
 
     render() {
         return <Temporadas
-            data={this.state.data}
+            dataBB={this.state.dataBB}
+            dataBCS={this.state.dataBCS}
+            nTemporadasBB={this.state.nTemporadasBB}
+            nTemporadasBCS={this.state.nTemporadasBCS}
         />
     }
 
