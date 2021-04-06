@@ -3,12 +3,13 @@ import TemporadasList from '../components/TemporadasList'
 import Welcome from '../components/Welcome'
 import AddButton from '../components/AddButton'
 
-const Temporadas = ({ data }) => (
+const Temporadas = ({ dataBB, nTemporadasBB }) => (
     <div className="container">
-
         <h1>Bienvenido a BB&BCSapi</h1>
+
         <TemporadasList
-            temporadas={data}
+            temporadas={nTemporadasBB}
+            episodios={dataBB}
         />
     </div>
 )
