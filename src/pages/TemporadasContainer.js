@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Temporadas from './Temporadas'
+import { useParams } from 'react-router-dom'
+
+
 
 class TemporadasContainer extends Component {
 
