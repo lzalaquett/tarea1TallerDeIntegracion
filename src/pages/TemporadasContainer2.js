@@ -61,7 +61,7 @@ const TemporadasContainer2 = () => {
     if (loading)
         return <Loading />
     if (error)
-        return <h1>error</h1>
+        return <h1>error 500</h1>
     return <Temporadas
         data={episodios}
         nTemporadas={nTemporadas}
