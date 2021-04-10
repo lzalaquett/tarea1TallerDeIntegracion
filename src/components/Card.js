@@ -1,7 +1,6 @@
 import React from 'react';
 import './styles/Card.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import circlesImg from '../imgs/bg.png';
 
 const Card = ({ episode_id, title, season, episode, air_date, characters, series }) => (
     <div className="card">

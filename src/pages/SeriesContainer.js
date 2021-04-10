@@ -51,10 +51,9 @@ class SeriesContainer extends Component {
             <div className="container">
                 <h1>Bienvenido a el visualizador de serires</h1>
                 <Row>
-                    {this.state.series.map((serie) => (
-                        <Col>
+                    {this.state.series.map((serie, index) => (
+                        <Col key={index}>
                             <SerieCard
-                                key={serie}
                                 nombre={serie}
                             />
                         </Col>
