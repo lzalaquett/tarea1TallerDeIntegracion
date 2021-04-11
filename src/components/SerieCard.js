@@ -7,7 +7,7 @@ import { Card } from 'react-bootstrap'
 
 const SerieCard = ({ nombre }) => (
     <Link to={'/temporadas/' + nombre} style={{ textDecoration: 'none' }}>
-        <Card min-width="200px">
+        <Card bg="dark" min-width="200px">
             <Card.Body>
                 <h3>{nombre || 'nombre de la serie'}</h3>
             </Card.Body>

@@ -10,7 +10,7 @@ const SelectTemporada = ({ temporada, onClick }) => {
     return (
         <div>
             <br />
-            <Button variant="primary" block data-temporada={temporada} onClick={onClick} >Temporada {temporada}</Button>
+            <Button variant="danger" block data-temporada={temporada} onClick={onClick} style={{ minWidth: '150px' }}>Temporada {temporada}</Button>
         </div>
     )
 }

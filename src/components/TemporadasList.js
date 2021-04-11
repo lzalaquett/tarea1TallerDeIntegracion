@@ -36,7 +36,7 @@ const TemporadasList = ({ temporadas, episodios }) => {
     return (
         <div>
             <Row>
-                <Col md={2}>
+                <Col md={3}>
                     {temporadas.map((temporada) => (
                         <SelectTemporada
                             key={temporada}

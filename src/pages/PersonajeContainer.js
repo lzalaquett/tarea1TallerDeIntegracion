@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Episodio from './Episodio'
+import Personaje from './Personaje'
 import { useParams } from 'react-router-dom'
 import Loading from '../components/Loading'
 
+const PersonajeContainer = () => {
 
-const EpisodioContainer = () => {
-
-    let { id } = useParams()
-    const [link, setLink] = useState('https://tarea-1-breaking-bad.herokuapp.com/api/episodes/' + id)
+    let { nombre } = useParams()
+    const [link, setLink] = useState('https://tarea-1-breaking-bad.herokuapp.com/api/characters?name=' + nombre)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
-    const [episodio, setEpisodio] = useState([])
+    const [personaje, setPersonaje] = useState([])
+
 
     useEffect(() => {
         consultaAPI()
@@ -20,14 +20,13 @@ const EpisodioContainer = () => {
     const consultaAPI = () => {
         axios.get(link)
             .then(result => {
-                setEpisodio(result.data[0])
+                setPersonaje(result.data[0])
                 setLoading(false)
             }).catch(error => {
                 setLoading(false)
                 setError(error)
             })
     }
-
     if (loading)
         return <Loading />
     if (error)
@@ -35,10 +34,10 @@ const EpisodioContainer = () => {
 
     return (
         <div>
-            <Episodio
-                episodio={episodio}
+            <Personaje
+                personaje={personaje}
             />
         </div>)
 }
 
-export default EpisodioContainer
+export default PersonajeContainer

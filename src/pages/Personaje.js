@@ -1,15 +1,15 @@
 import React from 'react'
-import { Container, Card } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import HomeNavbar from '../components/HomeNavbar'
-import EpisodioDetalle from '../components/EpisodioDetalle'
+import PersonajeDetalle from '../components/PersonajeDetalle'
 
-const Episodio = ({ episodio }) => {
+const Personaje = ({ personaje }) => {
     return (
         <div>
             <HomeNavbar />
             <Container>
-                <EpisodioDetalle
-                    episodio={episodio}
+                <PersonajeDetalle
+                    personaje={personaje}
                 />
             </Container>
             <br />
@@ -20,4 +20,4 @@ const Episodio = ({ episodio }) => {
     )
 }
 
-export default Episodio
+export default Personaje
