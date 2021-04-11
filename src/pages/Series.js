@@ -2,6 +2,7 @@ import React from 'react'
 import SerieCard from '../components/SerieCard'
 import { Row, Col, Container } from 'react-bootstrap'
 import HomeNavbar from '../components/HomeNavbar'
+import '../components/styles/componentes.css'
 
 const Series = ({ series }) => (
     <div>

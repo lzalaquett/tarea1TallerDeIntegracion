@@ -1,6 +1,16 @@
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
+  margin: 0;
+  margin-bottom: 40px;
+  background-color: #222222;
+  color: #fff;
+}
+html {
+}
+
+.card-body {
+  background: #606060;
+  color: rgb(255, 255, 255);
 }
 
 ol, ul {

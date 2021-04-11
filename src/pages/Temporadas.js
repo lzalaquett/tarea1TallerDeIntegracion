@@ -9,7 +9,7 @@ const Temporadas = ({ data, nTemporadas }) => {
         <div>
             <HomeNavbar />
             <Container>
-                <h1>Bienvenido a BB-BCS-api</h1>
+                <br />
 
                 <TemporadasList
                     temporadas={nTemporadas}

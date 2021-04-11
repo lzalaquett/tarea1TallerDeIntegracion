@@ -5,7 +5,7 @@ import Card from '../components/Card'
 const PropiedadesNew = ({ form, onChange }) => (
     <div className="row">
         <div className="col-sm">
-            <Card
+            <Card bg="dark"
                 {...form}
             />
         </div>
