@@ -1,14 +1,17 @@
 import React from 'react'
-import Card from './Card'
+import CardEpisodio from './CardEpisodio'
+import { CardDeck } from 'react-bootstrap'
 
 const ListaEpisodios = ({ episodios }) => (
     <div>
-        {episodios.map((episodio) => (
-            <Card
-                key={episodio.episode_id}
-                {...episodio}
-            />
-        ))}
+        <CardDeck>
+            {episodios.map((episodio) => (
+                <CardEpisodio
+                    key={episodio.episode_id}
+                    {...episodio}
+                />
+            ))}
+        </CardDeck>
     </div>
 )
 

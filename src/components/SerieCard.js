@@ -3,16 +3,17 @@ import 'bootstrap/dist/css/bootstrap.css'
 import imgBB from '../imgs/Breaking Bad.jpg'
 import imgCBS from '../imgs/Better Call Saul.jpg'
 import { Link } from 'react-router-dom'
+import { Card } from 'react-bootstrap'
 
 const SerieCard = ({ nombre }) => (
     <Link to={'/temporadas/' + nombre} style={{ textDecoration: 'none' }}>
-        <div className="card" min-width="200px">
-            <div className="card-body">
+        <Card min-width="200px">
+            <Card.Body>
                 <h3>{nombre || 'nombre de la serie'}</h3>
-                {nombre === "Breaking Bad" && <img src={imgBB} alt="portada de la serie" width='100%' max-width='300' />}
-                {nombre === "Better Call Saul" && <img src={imgCBS} alt="portada de la serie" width='100%' max-width='300' />}
-            </div>
-        </div>
+            </Card.Body>
+            {nombre === "Breaking Bad" && <Card.Img variant='bottom' src={imgBB} width='100%' max-width='300' />}
+            {nombre === "Better Call Saul" && <Card.Img variant='bottom' src={imgCBS} width='100%' max-width='300' />}
+        </Card>
     </Link>
 )
 
