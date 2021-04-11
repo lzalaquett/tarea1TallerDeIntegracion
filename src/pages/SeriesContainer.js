@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
-import SerieCard from '../components/SerieCard'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { Row } from 'react-bootstrap'
-import { Col } from 'react-bootstrap'
 import Loading from '../components/Loading'
+import Series from './Series'
 
 class SeriesContainer extends Component {
 
@@ -47,20 +44,9 @@ class SeriesContainer extends Component {
         if (this.state.error)
             return <h1>ERROR</h1>
 
-        return (
-            <div className="container">
-                <h1>Bienvenido a el visualizador de serires</h1>
-                <Row>
-                    {this.state.series.map((serie, index) => (
-                        <Col key={index}>
-                            <SerieCard
-                                nombre={serie}
-                            />
-                        </Col>
-                    ))}
-                </Row>
-            </div>
-        )
+        return <Series
+            series={this.state.series}
+        />
     }
 }
 
