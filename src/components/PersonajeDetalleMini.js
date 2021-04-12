@@ -3,7 +3,7 @@ import { Card, ButtonGroup, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 const PersonajeDetalleMini = ({ personaje }) => (
-    <Card bg="dark" style={{ minWidth: '120px', maxWidth: '500px', margin: '0' }}>
+    <Card bg="dark" style={{ maxWidth: '150px', height: '350px', margin: '0' }}>
         <Card.Img src={personaje.img} />
         <Card.Body>
             <h5>{personaje.name}</h5>
