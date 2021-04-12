@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/lzalaquett/tarea1TallerDeIntegracion/static/css/main.12daea2c.chunk.css",
+    "main.js": "/lzalaquett/tarea1TallerDeIntegracion/static/js/main.57547e89.chunk.js",
+    "main.js.map": "/lzalaquett/tarea1TallerDeIntegracion/static/js/main.57547e89.chunk.js.map",
+    "runtime-main.js": "/lzalaquett/tarea1TallerDeIntegracion/static/js/runtime-main.3ff53346.js",
+    "runtime-main.js.map": "/lzalaquett/tarea1TallerDeIntegracion/static/js/runtime-main.3ff53346.js.map",
+    "static/css/2.184f8ef6.chunk.css": "/lzalaquett/tarea1TallerDeIntegracion/static/css/2.184f8ef6.chunk.css",
+    "static/js/2.e4784370.chunk.js": "/lzalaquett/tarea1TallerDeIntegracion/static/js/2.e4784370.chunk.js",
+    "static/js/2.e4784370.chunk.js.map": "/lzalaquett/tarea1TallerDeIntegracion/static/js/2.e4784370.chunk.js.map",
+    "index.html": "/lzalaquett/tarea1TallerDeIntegracion/index.html",
+    "static/css/2.184f8ef6.chunk.css.map": "/lzalaquett/tarea1TallerDeIntegracion/static/css/2.184f8ef6.chunk.css.map",
+    "static/css/main.12daea2c.chunk.css.map": "/lzalaquett/tarea1TallerDeIntegracion/static/css/main.12daea2c.chunk.css.map",
+    "static/js/2.e4784370.chunk.js.LICENSE.txt": "/lzalaquett/tarea1TallerDeIntegracion/static/js/2.e4784370.chunk.js.LICENSE.txt",
+    "static/media/Better Call Saul.43c9f099.jpg": "/lzalaquett/tarea1TallerDeIntegracion/static/media/Better Call Saul.43c9f099.jpg",
+    "static/media/Breaking Bad.56a484af.jpg": "/lzalaquett/tarea1TallerDeIntegracion/static/media/Breaking Bad.56a484af.jpg",
+    "static/media/imgEpisodio.43f0ca98.jpg": "/lzalaquett/tarea1TallerDeIntegracion/static/media/imgEpisodio.43f0ca98.jpg",
+    "static/media/wallpaperBB.e00dc60f.jpg": "/lzalaquett/tarea1TallerDeIntegracion/static/media/wallpaperBB.e00dc60f.jpg",
+    "static/media/wallpaperBCS.9e81363c.jpg": "/lzalaquett/tarea1TallerDeIntegracion/static/media/wallpaperBCS.9e81363c.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3ff53346.js",
+    "static/css/2.184f8ef6.chunk.css",
+    "static/js/2.e4784370.chunk.js",
+    "static/css/main.12daea2c.chunk.css",
+    "static/js/main.57547e89.chunk.js"
+  ]
+}
