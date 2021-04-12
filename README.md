@@ -5,7 +5,25 @@ Para ver la pagina en linea se puede ingresar a <https://tarea1-bb-bcs-api.herok
 
 En este proyecto consume una API de Breaking Bad y Better Call Saul.
 
-El modo de uso es que en primer lugar se pueden los titulos de ambas series. Estos te redirijen a una vista de todas temporadas disponibles junto con sus respectivos episodios. En esta parte si seleccionas una temporada, automáticamente se actualiza la lista de episodios. 
-Cuando seleccionas un episodio te dirije a una vista más detallada de este. En esta vista puedes seleccionar a cualquiera de los personajes que aparecen en el episodio y te redirije a una vista detallada de dicho personaje. 
-En esta vista puedes ver la info personal del personaje, quien lo representa, las temporadas en las que aparece y un grupo de citas, si es que tiene. 
-
+Implementaciones:
+- se ven ambas series al inicio
+- si se selecciona una serie se puede ver sus temporadas y sus capítulos
+- si seleccionas una temporada se filtra la lista de capítulos
+- si seleccionas un capítulo se muestra el detalle de este:
+  - nombre
+  - temporada
+  - número
+  - fecha de publicación (en formato feo eso si)
+  - personajes
+- Si seleccionas un personaje te lleva a la vista detallada de dicho personaje que contiene:
+  - Nombre
+  - apodo
+  - categoría
+  - ocupación
+  - apariciones en BB
+  - apariciones en BCS
+- si seleccionas algún numero de temporada en la que aparece se redirige a la vista de las temporadas de esa serie, Por como está diseñada página no se me fue posible dirigirte exactamente a la temporada que seleccionaste porque solo hay una única vista para todas las temporadas. Tampoco se puede aplicar # en la URL porque es la misma vista   que se va actualizando.
+- tiene una NavBar que te redirige al inicio
+- se puede hacer búsqueda rápida y búsqueda en detalle
+- para la búsqueda rápida hay que apretar el botón de mostrar/ocultar
+- para la búsqueda detallada hay que apretar el botón de búsqueda detallada (que se puede afinar)
