@@ -1,11 +1,14 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import { Card, ButtonGroup, Button, Row, Col } from 'react-bootstrap'
+import { Card, ButtonGroup, Button, Row, Alert } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import Loading from './Loading'
 
 const PersonajeDetalle = ({ personaje }) => {
 
     const [citas, setCitas] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
 
     useEffect(() => {
         consultaAPI('https://tarea-1-breaking-bad.herokuapp.com/api/quote?author=' + personaje.name)
@@ -14,11 +17,12 @@ const PersonajeDetalle = ({ personaje }) => {
     const consultaAPI = (link) => {
         axios.get(link)
             .then(result => {
-                console.log('data', result.data)
                 setCitas(result.data)
-            }).catch(
-                console.log('error')
-            )
+                setLoading(false)
+            }).catch(error => {
+                setLoading(false)
+                setError(error)
+            })
     }
     return (
         <Card bg="dark" style={{ maxWidth: '600px' }}>
@@ -40,7 +44,7 @@ const PersonajeDetalle = ({ personaje }) => {
                     <p style={{ margin: 0 }}>Apariciones en temporadas de Breaking Bad:</p>
                     <ButtonGroup>
                         {personaje.appearance.map((aparición, index) => (
-                            <Button variant="danger" key={index} size="sm">{aparición}</Button>
+                            <Link to='/temporadas/Breaking Bad' key={index}><Button variant="danger" size="sm">{aparición}</Button></Link>
                         ))}
                     </ButtonGroup>
                 </div>
@@ -48,16 +52,14 @@ const PersonajeDetalle = ({ personaje }) => {
                     <p style={{ margin: 0 }}>Apariciones en temporadas Better Call Saul:</p>
                     <ButtonGroup>
                         {personaje.better_call_saul_appearance.map((aparición, index) => (
-                            <Link to={'/temporadas/' + personaje.category} key={index}><Button variant="danger" size="sm">{aparición}</Button></Link>
+                            <Link to='/temporadas/Better Call Saul' key={index}><Button variant="danger" size="sm">{aparición}</Button></Link>
                         ))}
                     </ButtonGroup>
                 </div>
                 <Card.Footer>
-
                     <p style={{ margin: 0 }}>Citas:</p>
-                    {citas.map((cita, index) => (
-                        <p>- {cita.quote}</p>
-                    ))}
+                    {error && <Alert variant='danger'>Error en cargar las citas</Alert>}
+                    {loading ? <Loading /> : citas.map((cita, index) => (<p key={index}>- {cita.quote}</p>))}
                 </Card.Footer>
             </Card.Body>
         </Card>
