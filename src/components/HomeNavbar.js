@@ -48,7 +48,7 @@ const HomeNavbar = () => {
             </Navbar>
             <div style={{ backgroundColor: '#5A5A5A', minHeight: '450px' }} >
                 <br />
-                <h3>  Personajes:</h3>
+                <h3>Personajes:</h3>
 
                 {personajes.map((p) => {
                     p && <p>{p.name}</p>
