@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import { Navbar, Form, FormControl, Nav, Button, Container, CardGroup, Collapse, CardDeck } from 'react-bootstrap'
+import { Navbar, Form, FormControl, Nav, Button, Container, CardGroup, Collapse, CardDeck, Alert } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import PersonajeDetalleMini from './PersonajeDetalleMini'
 
@@ -41,7 +41,7 @@ const HomeNavbar = () => {
                 <Form inline>
                     <FormControl
                         type="text"
-                        placeholder="Search"
+                        placeholder="Buscar Personajes"
                         onChange={handleChange}
                         className="mr-sm-2"
                         style={{ backgroundColor: 'darkgrey', color: 'white' }}
@@ -51,8 +51,14 @@ const HomeNavbar = () => {
                         onClick={() => setOpen(!open)}
                         aria-controls="example-collapse-text"
                         aria-expanded={open}>
-                        Mostrar/Ocultar
-                </Button>
+                        Mostrar/Ocultar Resultados
+                    </Button>
+                    <Link to="/personaje"><Button
+                        variant="dark">
+                        Busqueda avanzada
+                    </Button></Link>
+
+
                 </Form>
 
                 <Collapse in={open}>
@@ -60,6 +66,7 @@ const HomeNavbar = () => {
                         {personajes.map((p) => {
                             p && <p>{p.name}</p>
                         })}
+                        {!personajes[0] && <Alert variant="danger">no hay resultados</Alert>}
                         <CardDeck>
                             {personajes[0] && <PersonajeDetalleMini personaje={personajes[0]} />}
                             {personajes[1] && <PersonajeDetalleMini personaje={personajes[1]} />}
